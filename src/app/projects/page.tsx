@@ -8,29 +8,31 @@ interface Project {
   description: string;
   tags: string[];
   link: string;
+  demoLink?: string;
 }
 
 const projects: Project[] = [
   {
-    title: "Project One",
+    title: "Big Green Egg AI Chatbot",
     description:
-      "A full-stack web application built with Next.js, TypeScript, and Tailwind CSS. Features user authentication, real-time updates, and a responsive design.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-    link: "https://github.com/yourusername/project-one",
+      "A custom AI chatbot widget integrating OpenAI API and Shopify API for Big Green Egg's e-commerce platform. Features real-time customer support, recipe recommendations, and product information.",
+    tags: ["Next.js", "TypeScript", "OpenAI API", "Shopify API", "Socket.io", "PostgreSQL"],
+    link: "https://github.com/ajlorans/bgeChatbot",
+    demoLink: "https://bge-chatbot.vercel.app/",
   },
   {
-    title: "Project Two",
+    title: "Big Green Egg E-Commerce (Shopify)",
     description:
-      "An e-commerce platform with a modern UI, shopping cart functionality, and secure payment processing using Stripe.",
-    tags: ["React", "Node.js", "Stripe"],
-    link: "https://github.com/yourusername/project-two",
+      "A modern e-commerce platform built on Shopify, featuring product catalog, shopping cart, checkout, and dealer locator. Includes custom theme development and third-party integrations.",
+    tags: ["Shopify", "Liquid", "JavaScript", "CSS", "HTML", "Shopify API"],
+    link: "https://biggreenegg.com/",
   },
   {
-    title: "Project Three",
+    title: "Big Green Egg E-Commerce (WordPress)",
     description:
-      "A mobile-responsive dashboard application with data visualization, user management, and real-time analytics.",
-    tags: ["React", "Chart.js", "Firebase"],
-    link: "https://github.com/yourusername/project-three",
+      "A comprehensive WordPress e-commerce solution using Elementor and WooCommerce. Features custom product pages, dealer management, and content management system.",
+    tags: ["WordPress", "Elementor", "WooCommerce", "PHP", "MySQL", "JavaScript"],
+    link: "https://staging.biggreenegg.com/",
   },
   {
     title: "Project Four",
@@ -55,6 +57,7 @@ export default function ProjectsPage() {
           A collection of my recent work and side projects.
         </p>
       </div>
+
       <div className="grid gap-6 sm:grid-cols-2 w-full">
         {projects.map((project, index) => (
           <div
@@ -80,19 +83,62 @@ export default function ProjectsPage() {
               ))}
             </div>
             <div className="flex-grow"></div>
-            <div className="pt-2">
+            <div className="pt-2 flex gap-2">
               <Button
                 asChild
                 variant="outline"
                 className="w-full rounded-full hover:bg-purple-500/10 hover:text-purple-600 dark:hover:text-purple-300"
               >
                 <Link href={project.link} target="_blank">
-                  View Project
+                  {project.title.includes("Chatbot") ? "View Code" : "View Site"}
                 </Link>
               </Button>
+              {project.demoLink && (
+                <Button
+                  asChild
+                  variant="outline"
+                  className="w-full rounded-full hover:bg-purple-500/10 hover:text-purple-600 dark:hover:text-purple-300"
+                >
+                  <Link href={project.demoLink} target="_blank">
+                    Live Demo
+                  </Link>
+                </Button>
+              )}
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="w-full max-w-2xl mt-16">
+        <div
+          className="group flex flex-col space-y-4 rounded-xl border p-6 hover:shadow-lg transition-all bg-card hover:bg-card/80 backdrop-blur-sm animate-fadeIn"
+          style={{
+            animationDelay: "300ms",
+          }}
+        >
+          <div className="h-2 w-24 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></div>
+          <div className="space-y-2">
+            <h2 className="text-xl font-bold">This site is built with:</h2>
+            <p className="text-muted-foreground">The technologies and services used to build this portfolio website.</p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { name: "Next.js" },
+              { name: "TypeScript" },
+              { name: "Tailwind CSS" },
+              { name: "shadcn/ui" },
+              { name: "Vercel" },
+              { name: "Formspree" }
+            ].map((tech) => (
+              <span
+                key={tech.name}
+                className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium"
+              >
+                {tech.name}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

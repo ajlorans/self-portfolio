@@ -16,7 +16,14 @@ const projects: Project[] = [
     title: "Big Green Egg AI Chatbot",
     description:
       "A custom AI chatbot widget integrating OpenAI API and Shopify API for Big Green Egg's e-commerce platform. Features real-time customer support, recipe recommendations, and product information.",
-    tags: ["Next.js", "TypeScript", "OpenAI API", "Shopify API", "Socket.io", "PostgreSQL"],
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "OpenAI API",
+      "Shopify API",
+      "Socket.io",
+      "PostgreSQL",
+    ],
     link: "https://github.com/ajlorans/bgeChatbot",
     demoLink: "https://bge-chatbot.vercel.app/",
   },
@@ -31,15 +38,27 @@ const projects: Project[] = [
     title: "Big Green Egg E-Commerce (WordPress)",
     description:
       "A comprehensive WordPress e-commerce solution using Elementor and WooCommerce. Features custom product pages, dealer management, and content management system.",
-    tags: ["WordPress", "Elementor", "WooCommerce", "PHP", "MySQL", "JavaScript"],
+    tags: [
+      "WordPress",
+      "Elementor",
+      "WooCommerce",
+      "PHP",
+      "MySQL",
+      "JavaScript",
+    ],
     link: "https://staging.biggreenegg.com/",
   },
   {
-    title: "Project Four",
+    title: "Big Green Egg Warranty Automation",
     description:
-      "A personal blog platform with markdown support, tag filtering, and a clean, minimal design focused on readability.",
-    tags: ["Next.js", "MDX", "Tailwind CSS"],
-    link: "https://github.com/yourusername/project-four",
+      "Automated the Big Green Egg warranty claim process. Utilized Microsoft Forms for customer submissions, Microsoft AI Builder to scan and verify receipts for proof of purchase, and Power Automate to orchestrate the workflow, organizing validated claims within SharePoint for efficient customer support team access.",
+    tags: [
+      "Microsoft Power Automate",
+      "Microsoft Forms",
+      "Microsoft AI Builder",
+      "SharePoint",
+    ],
+    link: "#",
   },
 ];
 
@@ -54,7 +73,7 @@ export default function ProjectsPage() {
           Projects
         </h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          A collection of my recent work and side projects.
+          A collection of my recent work
         </p>
       </div>
 
@@ -83,28 +102,32 @@ export default function ProjectsPage() {
               ))}
             </div>
             <div className="flex-grow"></div>
-            <div className="pt-2 flex gap-2">
-              <Button
-                asChild
-                variant="outline"
-                className="w-full rounded-full hover:bg-purple-500/10 hover:text-purple-600 dark:hover:text-purple-300"
-              >
-                <Link href={project.link} target="_blank">
-                  {project.title.includes("Chatbot") ? "View Code" : "View Site"}
-                </Link>
-              </Button>
-              {project.demoLink && (
+            {project.link !== "#" && (
+              <div className="pt-2 flex gap-2">
                 <Button
                   asChild
                   variant="outline"
                   className="w-full rounded-full hover:bg-purple-500/10 hover:text-purple-600 dark:hover:text-purple-300"
                 >
-                  <Link href={project.demoLink} target="_blank">
-                    Live Demo
+                  <Link href={project.link} target="_blank">
+                    {project.title.includes("Chatbot")
+                      ? "View Code"
+                      : "View Site"}
                   </Link>
                 </Button>
-              )}
-            </div>
+                {project.demoLink && (
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full rounded-full hover:bg-purple-500/10 hover:text-purple-600 dark:hover:text-purple-300"
+                  >
+                    <Link href={project.demoLink} target="_blank">
+                      Live Demo
+                    </Link>
+                  </Button>
+                )}
+              </div>
+            )}
           </div>
         ))}
       </div>
@@ -119,7 +142,10 @@ export default function ProjectsPage() {
           <div className="h-2 w-24 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></div>
           <div className="space-y-2">
             <h2 className="text-xl font-bold">This site is built with:</h2>
-            <p className="text-muted-foreground">The technologies and services used to build this portfolio website.</p>
+            <p className="text-muted-foreground">
+              The technologies and services used to build this portfolio
+              website.
+            </p>
           </div>
           <div className="flex flex-wrap gap-2">
             {[
@@ -128,7 +154,7 @@ export default function ProjectsPage() {
               { name: "Tailwind CSS" },
               { name: "shadcn/ui" },
               { name: "Vercel" },
-              { name: "Formspree" }
+              { name: "Formspree" },
             ].map((tech) => (
               <span
                 key={tech.name}

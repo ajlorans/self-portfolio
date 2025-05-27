@@ -5,13 +5,16 @@ A modern, responsive portfolio website built with Next.js and Tailwind CSS to sh
 ## Features
 
 - Responsive design that works on all devices
-- Dynamic homepage with profile picture, typing animation, and core skills showcase
+- Dynamic homepage with profile picture, typing animation, and enhanced core technologies showcase
+- Enhanced Core Technologies section with brand-accurate colors, hover effects, and modern card design
 - Dark/light mode toggle
 - About page with detailed professional information and experience
 - Projects showcase featuring:
   - Big Green Egg AI Chatbot
+  - Big Green Egg Sales Dashboard
   - Big Green Egg E-Commerce (Shopify)
   - Big Green Egg E-Commerce (WordPress)
+  - Legal Document Management System
   - Big Green Egg Warranty Automation (Power Platform)
 - Contact form with Formspree integration
 - Modern UI with smooth animations and transitions
@@ -33,6 +36,10 @@ A modern, responsive portfolio website built with Next.js and Tailwind CSS to sh
 
 A custom AI chatbot widget integrating OpenAI API and Shopify API for Big Green Egg's e-commerce platform. Features real-time customer support, recipe recommendations, and product information.
 
+### Big Green Egg Sales Dashboard
+
+A comprehensive sales and inventory dashboard for executives to visualize dealer performance, track YTD sales, monitor inventory levels, and identify trends. Features dealer analytics, top performer leaderboards, automated alerts for low inventory and sales dips, interactive charts, and Power BI integration.
+
 ### Big Green Egg E-Commerce (Shopify)
 
 A modern e-commerce platform built on Shopify, featuring product catalog, shopping cart, checkout, and dealer locator. Includes custom theme development and third-party integrations.
@@ -40,6 +47,10 @@ A modern e-commerce platform built on Shopify, featuring product catalog, shoppi
 ### Big Green Egg E-Commerce (WordPress)
 
 A comprehensive WordPress e-commerce solution using Elementor and WooCommerce. Features custom product pages, dealer management, and content management system.
+
+### Legal Document Management System
+
+A comprehensive web application designed to streamline the management and approval workflow of legal documents. Features JWT-based authentication, role-based access control, secure document uploading, multi-step approval workflows, and document status tracking with approve/reject capabilities.
 
 ### Big Green Egg Warranty Automation
 
@@ -50,8 +61,8 @@ Automated the warranty claim process using Microsoft Power Automate, Forms, AI B
 First, clone the repository:
 
 ```bash
-git clone https://github.com/ajlorans/self-portfolio.git
-cd self-portfolio
+git clone https://github.com/ajlorans/austin-lorans-self-portfolio.git
+cd austin-lorans-self-portfolio
 ```
 
 Install dependencies:

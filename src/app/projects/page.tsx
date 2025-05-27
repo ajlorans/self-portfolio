@@ -28,6 +28,20 @@ const projects: Project[] = [
     demoLink: "https://bge-chatbot.vercel.app/",
   },
   {
+    title: "Big Green Egg Sales Dashboard",
+    description:
+      "A comprehensive sales and inventory dashboard for executives to visualize dealer performance, track YTD sales, monitor inventory levels, and identify trends. Features dealer analytics, top performer leaderboards, automated alerts for low inventory and sales dips, interactive charts, and Power BI integration.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Recharts",
+      "Lucide React",
+      "Power BI",
+    ],
+    link: "https://github.com/ajlorans/bge-sales-dashboard",
+  },
+  {
     title: "Big Green Egg E-Commerce (Shopify)",
     description:
       "A modern e-commerce platform built on Shopify, featuring product catalog, shopping cart, checkout, and dealer locator. Includes custom theme development and third-party integrations.",
@@ -47,6 +61,22 @@ const projects: Project[] = [
       "JavaScript",
     ],
     link: "https://staging.biggreenegg.com/",
+  },
+  {
+    title: "Legal Document Management System",
+    description:
+      "A comprehensive web application designed to streamline the management and approval workflow of legal documents. Features JWT-based authentication, role-based access control, secure document uploading, multi-step approval workflows, and document status tracking with approve/reject capabilities.",
+    tags: [
+      ".NET 8.0",
+      "C#",
+      "ASP.NET Core",
+      "Entity Framework",
+      "React",
+      "Tailwind CSS",
+      "JWT",
+      "Vite",
+    ],
+    link: "https://github.com/ajlorans/document-management",
   },
   {
     title: "Big Green Egg Warranty Automation",
@@ -110,7 +140,9 @@ export default function ProjectsPage() {
                   className="w-full rounded-full hover:bg-purple-500/10 hover:text-purple-600 dark:hover:text-purple-300"
                 >
                   <Link href={project.link} target="_blank">
-                    {project.title.includes("Chatbot")
+                    {project.title.includes("Chatbot") ||
+                    project.title.includes("Sales Dashboard") ||
+                    project.title.includes("Legal Document")
                       ? "View Code"
                       : "View Site"}
                   </Link>
